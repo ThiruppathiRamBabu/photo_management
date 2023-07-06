@@ -41,30 +41,26 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <marquee scrollamount="5">
-      <ion-grid *ngIf="datas$ | async as datas">
-        <ion-row>
-          <ion-col *ngFor="let data of datas">
-            <img [src]="data.Image" alt="">
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </marquee>
-    <ion-grid *ngIf="datas$ | async as datas">
+    <ion-grid style="margin-top:20px;" *ngIf="datas$ | async as datas">
       <ion-row>
-        <ion-col style="height: 330px;" *ngFor="let data of datas">
-          <!-- <img [src]="data.Image" alt=""> -->
+        <ion-col *ngFor="let data of datas">
+          <img [src]="data.Image" alt="">
         </ion-col>
       </ion-row>
     </ion-grid>
-    <marquee scrollamount="5">
-      <ion-grid *ngIf="datas$ | async as datas">
-        <ion-row>
-          <ion-col *ngFor="let data of datas">
-            <img [src]="data.Image" alt="">
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </marquee>
+    <ion-grid *ngIf="datas$ | async as datas">
+      <ion-row>
+        <ion-col *ngFor="let data of datas">
+          <img [src]="data.Image" alt="">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid *ngIf="datas$ | async as datas">
+      <ion-row>
+        <ion-col *ngFor="let data of datas">
+          <img [src]="data.Image" alt="">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-content>
 </div>
