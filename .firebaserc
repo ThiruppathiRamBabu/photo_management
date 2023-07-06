@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "photo-management-9305c": {
+      "hosting": {
+        "app": [
+          "photo-management-9305c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "photo-management-9305c"
+  }
+}

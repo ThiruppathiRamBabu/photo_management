@@ -1,0 +1,75 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>TRB</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-item routerLink="/home">
+      <ion-avatar slot="start">
+        <img src="../../assets/house-door-fill.svg" />
+      </ion-avatar>
+      <h3>Home</h3>
+    </ion-item>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="../../assets/images.svg" />
+      </ion-avatar>
+      <h3>Gallery</h3>
+    </ion-item>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="../../assets/palette.svg" />
+      </ion-avatar>
+      <h3>Filters</h3>
+    </ion-item>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="../../assets/house-door-fill.svg" />
+      </ion-avatar>
+      <h3>Home</h3>
+    </ion-item>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>TRB</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+  <marquee scrollamount="5">
+    <ion-grid *ngIf="datas$ | async as datas">
+      <ion-row>
+        <ion-col *ngFor="let data of datas">
+          <img [src]="data.Image" alt="">
+        </ion-col>
+      </ion-row>
+      </ion-grid>
+  </marquee>
+ 
+    
+    <ion-grid *ngIf="datas$ | async as datas">
+      <ion-row>
+        <ion-col style="height: 330px;" *ngFor="let data of datas">
+          <!-- <img [src]="data.Image" alt=""> -->
+        </ion-col>
+      </ion-row>
+      </ion-grid>
+    <marquee scrollamount="5">
+      <ion-grid *ngIf="datas$ | async as datas">
+        <ion-row>
+          <ion-col *ngFor="let data of datas">
+            <img [src]="data.Image" alt="">
+          </ion-col>
+        </ion-row>
+        </ion-grid>
+      </marquee>
+</ion-content>
+</div>
+
+
+

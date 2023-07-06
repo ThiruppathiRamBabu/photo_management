@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PhotoService } from '../photo.service';
+import { Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  constructor() {}
-
+  
+  constructor(private photoservice: PhotoService) {
+    
+  }
 }
+
+
+
