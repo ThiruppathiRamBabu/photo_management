@@ -28,10 +28,13 @@
     "@capacitor/keyboard": "5.0.5",
     "@capacitor/status-bar": "5.0.5",
     "@ionic/angular": "^7.0.0",
+    "@ionic/vue": "^7.1.1",
+    "@ionic/vue-router": "^7.1.1",
     "firebase": "^9.23.0",
     "firebase-tools": "^12.4.2",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
+    "swiper": "^10.0.3",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },

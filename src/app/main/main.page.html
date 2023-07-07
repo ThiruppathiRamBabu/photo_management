@@ -5,17 +5,11 @@
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <ion-item routerLink="/home">
+    <ion-item routerLink="/main">
       <ion-avatar slot="start">
         <img src="../../assets/home-outline.svg" />
       </ion-avatar>
       <h4>Home</h4>
-    </ion-item>
-    <ion-item>
-      <ion-avatar slot="start">
-        <img src="../../assets/create-outline.svg" />
-      </ion-avatar>
-      <h4>Workpage</h4>
     </ion-item>
     <ion-item routerLink="/gallery">
       <ion-avatar slot="start">
@@ -23,11 +17,17 @@
       </ion-avatar>
       <h4>Gallery</h4>
     </ion-item>
-    <ion-item>
+    <ion-item routerLink="/about">
       <ion-avatar slot="start">
-        <img src="../../assets/color-palette-outline.svg" />
+        <img src="../../assets/480px-Infobox_info_icon.svg.png" />
       </ion-avatar>
-      <h4>Filters</h4>
+      <h4>About</h4>
+    </ion-item>
+    <ion-item routerLink="/home">
+      <ion-avatar slot="start">
+        <img src="../../assets/exit-outline.svg" />
+      </ion-avatar>
+      <h4>Exit</h4>
     </ion-item>
   </ion-content>
 </ion-menu>
@@ -37,7 +37,7 @@
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <ion-title>TRB</ion-title>
+      <ion-title> <img src="../../assets/logo.png" alt="logo" width="60" height="40"></ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
@@ -45,26 +45,84 @@
       <ion-grid *ngIf="datas$ | async as datas">
         <ion-row>
           <ion-col *ngFor="let data of datas">
-            <img [src]="data.Image" alt="">
+            <img style="height: 200px; width: 200px; object-fit: contain;" [src]="data.Image" alt="">
           </ion-col>
         </ion-row>
       </ion-grid>
     </marquee>
-    <ion-grid *ngIf="datas$ | async as datas">
+    <ion-grid style="background-image:url(../../assets/istockphoto-1449600091-612x612.jpg) ;">
       <ion-row>
-        <ion-col style="height: 330px;" *ngFor="let data of datas">
-          <!-- <img [src]="data.Image" alt=""> -->
-        </ion-col>
+        <div style="display: flex; align-items: center;">
+          <video width="320" height="290" autoplay>
+            <source
+              src="https://d2n3vbifs87vy7.cloudfront.net/images/splash_video_vp9-57e9bb773789df357445bd19e28bc559.webm"
+              type="video/mp4">
+          </video>
+          <div style="flex-direction: column;">
+            <h1>Make the photos beautiful!</h1>
+            <ion-button color="light" fill="outline" (click)="choosePhotos()">Choose photos</ion-button>
+            <h6 style="color: white;">It's free & no registartion.!</h6>
+            <input type="file" id="fileInput" style="display: none;" (change)="handleFileInput($event)">
+          </div>
+        </div>
       </ion-row>
     </ion-grid>
     <marquee scrollamount="5">
       <ion-grid *ngIf="datas$ | async as datas">
         <ion-row>
           <ion-col *ngFor="let data of datas">
-            <img [src]="data.Image" alt="">
+            <img style="height: 200px; width: 200px; object-fit: contain;" [src]="data.Image" alt="">
           </ion-col>
         </ion-row>
       </ion-grid>
     </marquee>
+    
+
+    <!-- <ion-grid>
+      <ion-row>
+        <ion-col>
+          <swiper-container #swiper (afterinit)="swiperReady()" (slidechage)="swiperSlideChanged($event)" [loop]="true"
+            [pagination]="true" *ngIf="datas$ | async as datas">
+            <swiper-slide *ngFor="let data of datas">
+              <img [src]="data.Image" alt="">
+            </swiper-slide>
+          </swiper-container>
+        </ion-col>
+      </ion-row>
+    </ion-grid> -->
+    <!-- 
+    <ion-grid>
+      <ion-row>
+        <swiper-container #swiper (afterinit)="swiperReady()" (slidechage)="swiperSlideChanged($event)"
+          [loop]="true" [pagination]="true" *ngIf="datas$ | async as datas">
+          <swiper-slide *ngFor="let chunk of chunkArray(datas, 3)">
+            <ion-row>
+              <ion-col *ngFor="let data of chunk">
+                <img [src]="data.Image" alt="">
+              </ion-col>
+            </ion-row>
+          </swiper-slide>
+        </swiper-container>
+      </ion-row>
+    </ion-grid> -->
+
+
+
+
+
+    <!-- <swiper-container #swiper (afterinit)="swiperReady()" (slidechage)="swiperSlideChanged($event)" [loop]="true"
+      [pagination]="true" *ngIf="datas$ | async as datas">
+      <ion-button (click)="goPrev()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+      <swiper-slide *ngFor="let data of datas">
+
+        <img [src]="data.Image" alt="">
+
+      </swiper-slide>
+      <ion-button (click)="goNext()">
+        <ion-icon slot="icon-only" name="arrow-forward"></ion-icon>
+      </ion-button>
+    </swiper-container> -->
   </ion-content>
 </div>
